@@ -17,8 +17,8 @@ import SearchBar from '../SearchBar/SearchBar';
         this.setState({ posts: dummyData })
       }
       searchHandler = (e) => {
-          const filtered = this.state.posts.filter((post) => {
-            console.log(post)  
+          const filtered = this.state.posts.filter((post) => {  
+              console.log(post)
             return post.username.toLowerCase().includes(e.target.value.toLowerCase()) || post.likes.toString().includes(e.target.value.toString()) 
           })
           this.setState({ filteredPosts: filtered})
