@@ -1,0 +1,139 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* /////////////////////////////////////////////////////////////////////// */
+*{
+	box-sizing: border-box;
+	font: 62.5%;
+}
+.PostsPage{
+	display: flex;
+	flex-direction: column;
+	max-width: 642px;
+	margin: auto;
+}
+.profileHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 3%;
+}
+.imgThumb{
+	border-radius: 50%;
+}
+.userName{
+	font-weight: bold;
+	padding-left: 1%;
+	font-size: 1rem;
+}
+.postText{
+	padding: 2%;
+	border-bottom: 1px solid lightgrey;
+}
+.fa-heart{
+	padding-right: 4%;
+}
+.likes{
+	font-weight: bold;
+	padding: 2% 0;
+}
+.commentName{
+	font-weight: bold;
+	padding-right: 1%;
+}
+.comments{
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 2%;
+}
+.stamp{
+	color: grey;
+	font-size: .7rem;
+	margin-left: 40%;
+}
+.postContainer{
+	border: 1px solid lightgrey;
+}
+.searchLeft{
+	display: flex;
+	align-items: center;
+}
+.searchRight{
+	display: flex;
+	align-items: center;
+}
+.searchBar{
+	display: flex;
+	flex-direction: row;
+	padding: 2%;
+}
+.bar{
+	margin: 0 16%;
+	text-align: center;
+	border-radius: 4px;
+}
+.compass, .topHeart, .userIcon{
+	margin-right: 40%;
+	color: grey;
+}
+.logo{
+	border-left: 2px solid lightgrey;
+	margin-left: 10%;
+	padding-left: 7%;
+}
+.commentInput{
+	border: none;
+}
+.fa-instagram{
+	margin-left: 10%;
+}
+.commentStyle{
+	border-top: 1px solid lightgrey;
+	padding: 3% 0;
+}
