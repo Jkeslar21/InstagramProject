@@ -30,9 +30,10 @@ class Login extends React.Component {
         return (
             <div className='login'>
                 <form className='login-form'>
+                    <img src="/instagram.png" alt="Instagram" width='250px' className='loginLogo'></img>
                     <input className='loginInput' type='text' placeholder='Username' onChange={this.changeUserNameHandler} required/>
                     <input className='loginInput' type='password' placeholder='Password' onChange={this.changePasswordHandler} required/>
-                    <button onClick={this.submitDataHandler}>Login</button>
+                    <button onClick={this.submitDataHandler}>Log in</button>
                 </form>
             </div>
         )
