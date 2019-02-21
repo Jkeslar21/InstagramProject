@@ -1,6 +1,24 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
+//Styled Components
+const Comments = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+`;
+const CommentName = styled.p`
+    font-weight: bold;
+	padding-right: 1%;
+`;
+const CommentStyle = styled.form`
+    border-top: 1px solid lightgrey;
+	padding: 3% 0;
+`;
+const CommentInput = styled.input`
+    border: none;
+`;
 
 class CommentSection extends Component {
     constructor(props) {
@@ -24,39 +42,20 @@ class CommentSection extends Component {
   
     render() {
         return (
-            <div className='commentSection'>
+            <div>
             {this.state.comments.map(comment => (
-                <div key={comment.text} className='comments'>
-                    <p className='commentName'>{comment.username}</p>
+                <Comments key={comment.text}>
+                    <CommentName>{comment.username}</CommentName>
                     <p>{comment.text}</p>
-                </div>
+                </Comments>
             ))}
-                <form className='commentStyle' onSubmit={this.addNewComment}>
-                    <input type='text' placeholder='Add a comment...' className='commentInput' value={this.state.newComment} onChange={this.changeHandler} name='newComment' />
-                </form>
+                <CommentStyle onSubmit={this.addNewComment}>
+                    <CommentInput type='text' placeholder='Add a comment...' value={this.state.newComment} onChange={this.changeHandler} name='newComment' />
+                </CommentStyle>
             </div>
         );
     }
   }
-  
-
-
-
-// function CommentSection (props) {
-//     return (
-//         <div className='commentSection'>
-//         {props.commentData.map(comment => (
-//             <div key={comment.text} className='comments'>
-//                 <p className='commentName'>{comment.username}</p>
-//                 <p>{comment.text}</p>
-//             </div>
-//         ))}
-//             <div className='commentStyle'>
-//                 <input type='text' placeholder='Add a comment...' className='commentInput' />
-//             </div>
-//         </div>
-//     );
-// };
 
 export default CommentSection;
 

@@ -1,5 +1,41 @@
 import React from 'react';
 import './Login.css';
+import styled from 'styled-components';
+
+//Styled Components
+const LoginDiv = styled.div`
+    max-width: 642px;
+    margin: auto;
+    padding: 1%;
+    background-color: black;
+    border-radius: 12px;
+    margin-top: 9vh;
+`; 
+const LoginForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    border-radius: 12px;
+    background-color: floralwhite;
+    border: 8px solid #00618c;
+`;
+const LoginInput = styled.input`
+    text-align: center;
+        border-radius: 4px;
+        width: 250px;
+        margin: 1% 0;
+`;
+const LogInButton = styled.button`
+    text-align: center;
+        border-radius: 4px;
+        width: 250px;
+        height: px;
+        margin-top: 1%;
+        background-color: #3764cf;
+        color: white;
+        font-weight: bolder;
+`;
 
 class Login extends React.Component {
     constructor(){
@@ -28,14 +64,14 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className='login'>
-                <form className='login-form'>
-                    <img src="/instagram.png" alt="Instagram" width='250px' className='loginLogo'></img>
-                    <input className='loginInput' type='text' placeholder='Username' onChange={this.changeUserNameHandler} required/>
-                    <input className='loginInput' type='password' placeholder='Password' onChange={this.changePasswordHandler} required/>
-                    <button onClick={this.submitDataHandler}>Log in</button>
-                </form>
-            </div>
+            <LoginDiv>
+                <LoginForm>
+                    <img src="/instaLog.png" alt="Instagram" className='loginLogo' />
+                    <LoginInput className='loginInput' type='text' placeholder='Username' onChange={this.changeUserNameHandler} required/>
+                    <LoginInput className='loginInput' type='password' placeholder='Password' onChange={this.changePasswordHandler} required/>
+                    <LogInButton onClick={this.submitDataHandler}>Log in</LogInButton>
+                </LoginForm>
+            </LoginDiv>
         )
     }
 

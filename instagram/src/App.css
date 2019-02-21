@@ -79,6 +79,9 @@ table {
 .fa-heart{
 	padding-right: 4%;
 }
+.fa-heart:hover{
+	cursor: pointer;
+}
 .likes{
 	font-weight: bold;
 	padding: 2% 0;
@@ -96,9 +99,6 @@ table {
 	color: grey;
 	font-size: .7rem;
 	margin-left: 40%;
-}
-.postContainer{
-	border: 1px solid lightgrey;
 }
 .searchLeft{
 	display: flex;
@@ -136,4 +136,7 @@ table {
 .commentStyle{
 	border-top: 1px solid lightgrey;
 	padding: 3% 0;
+}
+.userHeader{
+	border: 1px solid lightgrey;
 }
