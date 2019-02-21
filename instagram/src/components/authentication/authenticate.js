@@ -3,10 +3,6 @@ import Login from '../Login/Login';
 
 const authenticate = App =>
   class extends React.Component {
-    render() {
-      return <App />;
-    }
-
     constructor(){
       super();
       this.state = {
