@@ -8,6 +8,7 @@ import styled from 'styled-components';
 //Styled Components
 const UserHeader = styled.div`
     border: 1px solid lightgrey;
+    margin-bottom: 3%;
 `;
 const ProfileHeader = styled.div`
     display: flex;
@@ -44,7 +45,8 @@ const Stamp = styled.p`
         this.state = {
           dummyData: [],
           posts: [],
-          filteredPosts: []
+          filteredPosts: [],
+          isLiked: false
         };
       }
       componentDidMount() {
@@ -66,7 +68,7 @@ const Stamp = styled.p`
         else {
             newPost[index].likes++
             newPost[index].liked = true;
-        } this.setState({ posts: newPost })
+        } this.setState({ posts: newPost, isLiked: !this.state.isLiked })
     }
 
     render() {
@@ -83,8 +85,8 @@ const Stamp = styled.p`
                     <img src={dummyData.imageUrl} alt={dummyData.username} />
                  <PostText>
                         <div>
-                            <i onClick={()=>this.increaseLikeHeandler(index)} class="far fa-heart fa-lg"></i>
-                            <i class="far fa-comment fa-lg"></i>
+                            <i onClick={()=>this.increaseLikeHeandler(index)} className={this.state.isLiked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
+                            <i className="far fa-comment fa-lg"></i>
                         </div>
                     <Likes>{dummyData.likes} likes</Likes>
                     <CommentSection commentData={dummyData.comments} />
@@ -101,8 +103,8 @@ const Stamp = styled.p`
                     <img src={dummyData.imageUrl} alt={dummyData.username} />
                  <PostText>
                         <div>
-                            <i onClick={()=>this.increaseLikeHeandler(index)} class="far fa-heart fa-lg"></i>
-                            <i class="far fa-comment fa-lg"></i>
+                        <i onClick={()=>this.increaseLikeHeandler(index)} className={this.state.isLiked ? "far fa-heart fa-lg liked" : "far fa-heart fa-lg"}></i>
+                            <i className="far fa-comment fa-lg"></i>
                         </div>
                     <Likes>{dummyData.likes} likes</Likes>
                     <CommentSection commentData={dummyData.comments} />
@@ -134,3 +136,6 @@ PostContainer.defaultProps = {
 };
 
 export default PostContainer;
+
+
+{/* <i onClick={()=>this.increaseLikeHeandler(index)} onChange={ () => this.setState({isLiked: !this.state.isLiked})} className={this.state.isLiked ? "far fa-heart fa-lg liked" : "far fa-heart fa-lg"}></i> */}

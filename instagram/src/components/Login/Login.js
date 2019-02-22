@@ -22,19 +22,19 @@ const LoginForm = styled.form`
 `;
 const LoginInput = styled.input`
     text-align: center;
-        border-radius: 4px;
-        width: 250px;
-        margin: 1% 0;
+    border-radius: 4px;
+    width: 250px;
+    margin: 1% 0;
 `;
 const LogInButton = styled.button`
     text-align: center;
-        border-radius: 4px;
-        width: 250px;
-        height: px;
-        margin-top: 1%;
-        background-color: #3764cf;
-        color: white;
-        font-weight: bolder;
+    border-radius: 4px;
+    width: 250px;
+    height: px;
+    margin-top: 1%;
+    background-color: #3764cf;
+    color: white;
+    font-weight: bolder;
 `;
 
 class Login extends React.Component {
