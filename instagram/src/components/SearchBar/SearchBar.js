@@ -27,14 +27,14 @@ class SearchBar extends Component {
       return (
         <SearchBarStyle>
             <SearchLeft>
-                <i class="fab fa-instagram fa-lg"></i>
+                <i className="fab fa-instagram fa-lg"></i>
                 <img src="/instagram.png" alt="Instagram" width='100px' className='logo'></img>
             </SearchLeft>
             <Bar type='text' placeholder='search here' onChange={this.props.searchHandler} />
             <SearchRight>
-                <i class="far fa-compass fa-lg compass"></i>
-                <i class="far fa-heart fa-lg topHeart"></i>
-                <i class="far fa-user fa-lg userIcon"></i>
+                <i className="far fa-compass fa-lg compass"></i>
+                <i className="far fa-heart fa-lg topHeart"></i>
+                <i className="far fa-user fa-lg userIcon"></i>
             </SearchRight>
         </SearchBarStyle>
       );

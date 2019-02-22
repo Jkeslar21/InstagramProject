@@ -103,7 +103,7 @@ const Stamp = styled.p`
                     <img src={dummyData.imageUrl} alt={dummyData.username} />
                  <PostText>
                         <div>
-                        <i onClick={()=>this.increaseLikeHeandler(index)} className={this.state.isLiked ? "far fa-heart fa-lg liked" : "far fa-heart fa-lg"}></i>
+                        <i onClick={()=>this.increaseLikeHeandler(index)} className={this.state.isLiked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
                             <i className="far fa-comment fa-lg"></i>
                         </div>
                     <Likes>{dummyData.likes} likes</Likes>
@@ -136,6 +136,3 @@ PostContainer.defaultProps = {
 };
 
 export default PostContainer;
-
-
-{/* <i onClick={()=>this.increaseLikeHeandler(index)} onChange={ () => this.setState({isLiked: !this.state.isLiked})} className={this.state.isLiked ? "far fa-heart fa-lg liked" : "far fa-heart fa-lg"}></i> */}
