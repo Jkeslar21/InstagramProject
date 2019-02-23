@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css';
 import styled from 'styled-components';
+import {Spring} from 'react-spring';
 
 //Styled Components
 const LoginDiv = styled.div`
@@ -60,17 +61,23 @@ class Login extends React.Component {
 
     render() {
         return (
-            <LoginDiv>
-                <LoginForm>
-                    <img src="/instaLog.png" alt="Instagram" className='loginLogo' />
-                    <LoginInput className='loginInput' type='text' placeholder='Username' onChange={this.changeUserNameHandler} required/>
-                    <LoginInput className='loginInput' type='password' placeholder='Password' onChange={this.changePasswordHandler} required/>
-                    <LogInButton onClick={this.submitDataHandler}>Log in</LogInButton>
-                </LoginForm>
-            </LoginDiv>
+            <Spring>
+                { props => (
+                    <div style={props}>
+                        <LoginDiv>
+                            <LoginForm>
+                                <img src="/instaLog.png" alt="Instagram" className='loginLogo' />
+                                <LoginInput className='loginInput' type='text' placeholder='Username' onChange={this.changeUserNameHandler} required/>
+                                <LoginInput className='loginInput' type='password' placeholder='Password' onChange={this.changePasswordHandler} required/>
+                                <LogInButton onClick={this.submitDataHandler}>Log in</LogInButton>
+                            </LoginForm>
+                        </LoginDiv>
+                    </div>
+                )}
+            </Spring>
+                                        
         )
-    }
-
+    }   
 }
 
 export default Login;
