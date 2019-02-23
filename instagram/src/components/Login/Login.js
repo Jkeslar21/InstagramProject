@@ -46,15 +46,11 @@ class Login extends React.Component {
         }
     }
 
-    changeUserNameHandler = e => {
-        this.setState({ username: e.target.value })
-    }
+    changeUserNameHandler = e => this.setState({ username: e.target.value });
 
-    changePasswordHandler = e => {
-        this.setState({ password: e.target.value })
-    }
+    changePasswordHandler = e => this.setState({ password: e.target.value });
 
-    submitDataHandler = e => {
+    submitDataHandler = () => {
         const username = this.state.username;
         const password = this.state.password;
         localStorage.setItem('username', username);

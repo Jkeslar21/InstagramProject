@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 //Styled Components
 const UserHeader = styled.div`
-    border: 1px solid lightgrey;
+    border: 1px solid #00618c;;
     margin-bottom: 3%;
     background-color: floralwhite;
 `;
@@ -25,13 +25,20 @@ const UserNamePost = styled.p`
     font-weight: bold;
 	padding-left: 1%;
     font-size: 1rem;
+    position: relative;
+    top: 6.5px;
+    &:hover{
+        color: #00618c;
+        cursor: pointer;
+    }
 `;
 const PostText = styled.div`
     padding: 2%;
 `;
 const Likes = styled.p`
     font-weight: bold;
-	padding: 2% 0;
+    padding: 2% 0;
+    
 `;
 const Stamp = styled.p`
     color: grey;
@@ -89,7 +96,7 @@ const Stamp = styled.p`
                             <i onClick={()=>this.increaseLikeHandler(index)} className={dummyData.liked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
                             <i className="far fa-comment fa-lg"></i>
                         </>
-                    <Likes>{dummyData.likes} likes</Likes>
+                    <Likes><span className='blueLikes'>{dummyData.likes}</span> <span className='blackLikes'>likes</span></Likes>
                     <CommentSection commentData={dummyData.comments} />
                     <Stamp>{dummyData.timestamp}</Stamp>
                 </PostText>

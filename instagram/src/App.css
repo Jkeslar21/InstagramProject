@@ -120,10 +120,13 @@ table {
 }
 .compass, .topHeart, .userIcon{
 	margin-right: 40%;
-	color: grey;
+	color:#262626;
+	position: relative;
+	right: 40px;
 }
-.compass:hover, .topHeart:hover, .userIcon:hover, .fa-comment{
+.compass:hover, .topHeart:hover, .userIcon:hover, .fa-comment:hover{
 	cursor: pointer;
+	color: #00618c;
 }
 .logo{
 	border-left: 2px solid lightgrey;
@@ -145,4 +148,16 @@ table {
 }
 .fas{
 	color: #ff4e5e;
+}
+.blackLikes{	
+	color: black;
+}
+.blueLikes{
+	color: #00618c;
+}
+.far:hover{
+	color: #00618c;
+}
+.fab{
+	color: #00618c;
 }

@@ -12,6 +12,9 @@ const CommentName = styled.p`
     font-weight: bold;
 	padding-right: 1%;
 `;
+const CommentText = styled.p`
+    color: #00618c;
+`;
 const CommentStyle = styled.form`
     border-top: 1px solid lightgrey;
 	padding: 3% 0;
@@ -19,6 +22,7 @@ const CommentStyle = styled.form`
 const CommentInput = styled.input`
     border: none;
     background-color: floralwhite;
+    color: #00618c;
 `;
 
 class CommentSection extends Component {
@@ -47,7 +51,7 @@ class CommentSection extends Component {
             {this.state.comments.map(comment => (
                 <Comments key={comment.text}>
                     <CommentName>{comment.username}</CommentName>
-                    <p>{comment.text}</p>
+                    <CommentText>{comment.text}</CommentText>
                 </Comments>
             ))}
                 <CommentStyle onSubmit={this.addNewComment}>
