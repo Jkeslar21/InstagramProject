@@ -14,7 +14,8 @@ const SearchLeft = styled.div`
 const Bar = styled.input`
   margin: 0 16%;
 	text-align: center;
-	border-radius: 4px;
+  border-radius: 4px;
+  background-color: floralwhite;
 `;
 const SearchRight = styled.div`
   display: flex;

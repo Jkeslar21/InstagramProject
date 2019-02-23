@@ -9,6 +9,7 @@ import styled from 'styled-components';
 const UserHeader = styled.div`
     border: 1px solid lightgrey;
     margin-bottom: 3%;
+    background-color: floralwhite;
 `;
 const ProfileHeader = styled.div`
     display: flex;
@@ -23,11 +24,10 @@ const ImgThumb = styled.img`
 const UserNamePost = styled.p`
     font-weight: bold;
 	padding-left: 1%;
-	font-size: 1rem;
+    font-size: 1rem;
 `;
 const PostText = styled.div`
     padding: 2%;
-	border-bottom: 1px solid lightgrey;
 `;
 const Likes = styled.p`
     font-weight: bold;
@@ -45,11 +45,11 @@ const Stamp = styled.p`
         this.state = {
           dummyData: [],
           posts: [],
-          filteredPosts: [],
-          isLiked: false
+          filteredPosts: [],          
         };
       }
       componentDidMount() {
+            console.log('cdm', this.state.posts)
         this.setState({ posts: dummyData })
       }
       searchHandler = (e) => {
@@ -59,8 +59,9 @@ const Stamp = styled.p`
           })
           this.setState({ filteredPosts: filtered})
       }
-    increaseLikeHeandler = index => {
+    increaseLikeHandler = index => {
         const newPost = [...this.state.posts]
+        console.log(newPost[index].liked)
         if (newPost[index].liked) {
             newPost[index].likes--
             newPost[index].liked = false;
@@ -68,12 +69,12 @@ const Stamp = styled.p`
         else {
             newPost[index].likes++
             newPost[index].liked = true;
-        } this.setState({ posts: newPost, isLiked: !this.state.isLiked })
+        } this.setState({ posts: newPost })
     }
-
     render() {
+        console.log('render', this.state.posts)
         return (
-        <div>
+        <>
             <SearchBar searchHandler={this.searchHandler} />
             {this.state.filteredPosts.length === 0 ?
         this.state.posts.map((dummyData, index) => ( 
@@ -84,10 +85,10 @@ const Stamp = styled.p`
                 </ProfileHeader>
                     <img src={dummyData.imageUrl} alt={dummyData.username} />
                  <PostText>
-                        <div>
-                            <i onClick={()=>this.increaseLikeHeandler(index)} className={this.state.isLiked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
+                        <>
+                            <i onClick={()=>this.increaseLikeHandler(index)} className={dummyData.liked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
                             <i className="far fa-comment fa-lg"></i>
-                        </div>
+                        </>
                     <Likes>{dummyData.likes} likes</Likes>
                     <CommentSection commentData={dummyData.comments} />
                     <Stamp>{dummyData.timestamp}</Stamp>
@@ -102,10 +103,10 @@ const Stamp = styled.p`
                 </ProfileHeader>
                     <img src={dummyData.imageUrl} alt={dummyData.username} />
                  <PostText>
-                        <div>
-                        <i onClick={()=>this.increaseLikeHeandler(index)} className={this.state.isLiked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
+                        <>
+                            <i onClick={()=>this.increaseLikeHandler(index)} className={dummyData.liked ? "fas fa-heart fa-lg" : "far fa-heart fa-lg"}></i>
                             <i className="far fa-comment fa-lg"></i>
-                        </div>
+                        </>
                     <Likes>{dummyData.likes} likes</Likes>
                     <CommentSection commentData={dummyData.comments} />
                     <Stamp>{dummyData.timestamp}</Stamp>
@@ -113,7 +114,7 @@ const Stamp = styled.p`
             </UserHeader>
         ))    
         }
-        </div>
+        </>
     );
 };
 }

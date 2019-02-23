@@ -18,6 +18,7 @@ const CommentStyle = styled.form`
 `;
 const CommentInput = styled.input`
     border: none;
+    background-color: floralwhite;
 `;
 
 class CommentSection extends Component {

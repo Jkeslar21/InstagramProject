@@ -122,6 +122,9 @@ table {
 	margin-right: 40%;
 	color: grey;
 }
+.compass:hover, .topHeart:hover, .userIcon:hover, .fa-comment{
+	cursor: pointer;
+}
 .logo{
 	border-left: 2px solid lightgrey;
 	margin-left: 10%;
