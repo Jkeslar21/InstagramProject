@@ -1,50 +1,55 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+//Styled Components
+const SearchBarStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 2%;
+  justify-content: center;
+  width: 642px;
+`;
+const SearchLeft = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 35px;
+`;
+const Bar = styled.input`
+  margin: 0 10%;
+	text-align: center;
+  border-radius: 4px;
+  background-color: floralwhite;
+  color: #00618c;
+  font-weight: bold;
+  position: relative;
+  right: 25px;
+`;
+const SearchRight = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 10px;
+`;
 
 class SearchBar extends Component {
-    constructor() {
-        super();
-        // this.state = {
-        //     search: ''
-        // };
-      }
-// changeHandler = (e) =>{
-//   this.setState({ search: e.target.value })
-// }
+
     render() {
       return (
-        <div className='searchBar'>
-            <div className='searchLeft'>
-                <i class="fab fa-instagram fa-lg"></i>
+        <SearchBarStyle>
+            <SearchLeft>
+                <i className="fab fa-instagram fa-lg"></i>
                 <img src="/instagram.png" alt="Instagram" width='100px' className='logo'></img>
-            </div>
-            <input type='text' placeholder='search here' className='bar' onChange={this.props.searchHandler} />
-            <div className='searchRight'>
-                <i class="far fa-compass fa-lg compass"></i>
-                <i class="far fa-heart fa-lg topHeart"></i>
-                <i class="far fa-user fa-lg userIcon"></i>
-            </div>
-        </div>
+            </SearchLeft>
+            <Bar type='text' placeholder='search here' onChange={this.props.searchHandler} />
+            <SearchRight>
+                <i className="far fa-compass fa-lg compass"></i>
+                <i className="far fa-heart fa-lg topHeart"></i>
+                <i className="far fa-user fa-lg userIcon"></i>
+            </SearchRight>
+        </SearchBarStyle>
       );
     }
   }
   
   export default SearchBar;
-
-// function SearchBar (props) {
-//     return (
-//         <div className='searchBar'>
-//             <div className='searchLeft'>
-//                 <i class="fab fa-instagram fa-lg"></i>
-//                 <img src="/instagram.png" alt="Instagram" width='100px' className='logo'></img>
-//             </div>
-//             <input type='text' placeholder='search here' className='bar' />
-//             <div className='searchRight'>
-//                 <i class="far fa-compass fa-lg compass"></i>
-//                 <i class="far fa-heart fa-lg topHeart"></i>
-//                 <i class="far fa-user fa-lg userIcon"></i>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default SearchBar;
